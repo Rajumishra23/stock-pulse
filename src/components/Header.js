@@ -98,7 +98,7 @@ const Header = () => {
       {/* 🔹 Hero Section - Only on Home Page */}
       {isHome && (
         <>
-          <div className="relative h-[280px] md:h-[450px] overflow-hidden">
+          <div className="relative h-[380px] md:h-[650px] overflow-hidden">
             {slides.map((src, index) => (
               <div
                 key={index}
@@ -109,28 +109,28 @@ const Header = () => {
               />
             ))}
             <div className="absolute inset-0 bg-black/40"></div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 mt-10 md:mt-16 text-white">
-              <h1 className="text-2xl md:text-4xl font-extrabold max-w-2xl leading-snug">
-                Investment Today is a Source of Income Tomorrow
-              </h1>
-              <p className="mt-3 max-w-xl text-base md:text-lg">
-                Easy way to invest — grow your wealth with smart, secure, and reliable strategies.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <NavLink
-                  to="/open-account"
-                  className="px-4 py-2 bg-amber-500 text-black font-semibold rounded-md shadow hover:bg-amber-600 hover:text-white transition text-sm md:text-base"
-                >
-                  OPEN AN ACCOUNT
-                </NavLink>
-                <NavLink
-                  to="/login"
-                  className="px-4 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition text-sm md:text-base"
-                >
-                  LOGIN
-                </NavLink>
-              </div>
-            </div>
+            <div className="relative z-10 max-w-7xl mx-auto px-4 mt-20 md:mt-32 text-white">
+  <h1 className="text-2xl md:text-4xl font-extrabold max-w-2xl leading-snug">
+    Investment Today is a Source of Income Tomorrow
+  </h1>
+  <p className="mt-3 max-w-xl text-base md:text-lg">
+    Easy way to invest — grow your wealth with smart, secure, and reliable strategies.
+  </p>
+  <div className="mt-5 flex flex-wrap gap-3">
+    <NavLink
+      to="/open-account"
+      className="px-4 py-2 bg-amber-500 text-black font-semibold rounded-md shadow hover:bg-amber-600 hover:text-white transition text-sm md:text-base"
+    >
+      OPEN AN ACCOUNT
+    </NavLink>
+    <NavLink
+      to="/login"
+      className="px-4 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition text-sm md:text-base"
+    >
+      LOGIN
+    </NavLink>
+  </div>
+</div>
           </div>
 
           {/* Icon Strip */}

@@ -59,34 +59,32 @@ const StockNews = () => {
         </motion.div>
 
         {/* Content: news list + sidebar CTA */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={container}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-6"
-        >
-          {/* News cards (span 3 cols on desktop) */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {newsItems.map((item, idx) => (
-              <motion.article
-                key={idx}
-                variants={fadeUp}
-                className="bg-white rounded-md shadow p-4 border border-gray-100 hover:shadow-md transition"
-              >
-                <p className="text-xs text-gray-500 mb-2">{item.date}</p>
-                <h3 className="text-base font-semibold text-gray-800 leading-snug mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {item.summary}
-                </p>
-              </motion.article>
-            ))}
-          </div>
+       <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={container}
+  className="flex justify-center" // ✅ center align
+>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+    {newsItems.map((item, idx) => (
+      <motion.article
+        key={idx}
+        variants={fadeUp}
+        className="bg-white rounded-md shadow p-4 border border-gray-100 hover:shadow-md transition"
+      >
+        <p className="text-xs text-gray-500 mb-2">{item.date}</p>
+        <h3 className="text-base font-semibold text-gray-800 leading-snug mb-2">
+          {item.title}
+        </h3>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          {item.summary}
+        </p>
+      </motion.article>
+    ))}
+  </div>
+</motion.div>
 
-         
-        </motion.div>
       </div>
     </section>
   );
