@@ -27,33 +27,52 @@ const Header = () => {
   return (
     <>
       {/* 🔹 Navbar - Always Visible */}
-      <header className="border-b border-gray-200 bg-white shadow-sm">
+      <header className="border-b border-gray-200 bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto py-3 px-4 flex items-center justify-between">
           {/* Logo */}
           <div className="flex flex-col leading-tight">
             <h1 className="text-2xl font-extrabold text-blue-800 tracking-wide">
               stock<span className="text-teal-500">plus</span>
             </h1>
-            <p className="text-sm text-gray-500 tracking-wide">
-              easy way to invest
-            </p>
+            <p className="text-sm text-gray-500 tracking-wide">easy way to invest</p>
           </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-800">
-            <NavLink to="/about" className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition">
+            <NavLink
+              to="/"
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition"
+            >
+              HOME
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition"
+            >
               ABOUT US
             </NavLink>
-            <NavLink to="/productservice" className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition">
+            <NavLink
+              to="/productservice"
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition"
+            >
               PRODUCT & SERVICES
             </NavLink>
-            <NavLink to="/markets" className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition">
+            <NavLink
+              to="/markets"
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition"
+            >
               MARKETS
             </NavLink>
-            <NavLink to="/research" className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition">
+            <NavLink
+              to="/research"
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-blue-800 hover:text-white transition"
+            >
               RESEARCH
             </NavLink>
-            <NavLink to="/login" className="px-3 py-1 rounded-md border border-gray-300 text-green-600 hover:bg-green-500 hover:text-white transition">
+            <NavLink
+              to="/login"
+              className="px-3 py-1 rounded-md border border-gray-300 text-green-600 hover:bg-green-500 hover:text-white transition"
+            >
               LOGIN
             </NavLink>
           </nav>
@@ -84,11 +103,24 @@ const Header = () => {
                 <FaTimes size={20} />
               </button>
               <nav className="flex flex-col gap-2 text-sm font-medium text-blue-500">
-                <NavLink to="/about" onClick={() => setMenuOpen(false)}>ABOUT US</NavLink>
-                <NavLink to="/productservice" onClick={() => setMenuOpen(false)}>PRODUCT & SERVICES</NavLink>
-                <NavLink to="/markets" onClick={() => setMenuOpen(false)}>MARKETS</NavLink>
-                <NavLink to="/research" onClick={() => setMenuOpen(false)}>RESEARCH</NavLink>
-                <NavLink to="/login" onClick={() => setMenuOpen(false)}>LOGIN</NavLink>
+                <NavLink to="/" onClick={() => setMenuOpen(false)}>
+                  HOME
+                </NavLink>
+                <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+                  ABOUT US
+                </NavLink>
+                <NavLink to="/productservice" onClick={() => setMenuOpen(false)}>
+                  PRODUCT & SERVICES
+                </NavLink>
+                <NavLink to="/markets" onClick={() => setMenuOpen(false)}>
+                  MARKETS
+                </NavLink>
+                <NavLink to="/research" onClick={() => setMenuOpen(false)}>
+                  RESEARCH
+                </NavLink>
+                <NavLink to="/login" onClick={() => setMenuOpen(false)}>
+                  LOGIN
+                </NavLink>
               </nav>
             </div>
           </div>
@@ -98,7 +130,7 @@ const Header = () => {
       {/* 🔹 Hero Section - Only on Home Page */}
       {isHome && (
         <>
-          <div className="relative h-[380px] md:h-[650px] overflow-hidden">
+          <div className="relative h-[380px] md:h-[600px] overflow-hidden mt-16">
             {slides.map((src, index) => (
               <div
                 key={index}
@@ -109,7 +141,7 @@ const Header = () => {
               />
             ))}
             <div className="absolute inset-0 bg-black/40"></div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 mt-20 md:mt-32 text-white">
+           <div className="relative z-10 max-w-7xl mx-auto px-4 mt-24 md:mt-40 text-white">
   <h1 className="text-2xl md:text-4xl font-extrabold max-w-2xl leading-snug">
     Investment Today is a Source of Income Tomorrow
   </h1>
@@ -130,34 +162,35 @@ const Header = () => {
       LOGIN
     </NavLink>
   </div>
-</div>
-          </div>
-
-          {/* Icon Strip */}
-          <div className="bg-white shadow-sm border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-0 sm:px-4 py-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 text-center">
-              <div className="flex flex-col items-center gap-2 p-4 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
-                <FaSearch className="text-blue-600 text-2xl" />
-                <span className="text-sm font-medium text-gray-800">RESEARCH</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-4 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
-                <FaChartLine className="text-green-600 text-2xl" />
-                <span className="text-sm font-medium text-gray-800">EQUITY</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-4 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
-                <FaPiggyBank className="text-pink-500 text-2xl" />
-                <span className="text-sm font-medium text-gray-800">MUTUAL FUNDS</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-4 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
-                <FaShieldAlt className="text-yellow-500 text-2xl" />
-                <span className="text-sm font-medium text-gray-800">INSURANCE</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 p-4 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
-                <FaFileAlt className="text-purple-600 text-2xl" />
-                <span className="text-sm font-medium text-gray-800">IPO / CORPORATE BOND</span>
-              </div>
             </div>
           </div>
+
+         {/* Icon Strip */}
+<div className="bg-white shadow-sm border-t border-gray-200">
+  <div className="max-w-7xl mx-auto px-0 sm:px-4 py-6 md:py-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 text-center">
+    <div className="flex flex-col items-center gap-3 p-6 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
+      <FaSearch className="text-blue-600 text-3xl" />
+      <span className="text-sm md:text-base font-medium text-gray-800">RESEARCH</span>
+    </div>
+    <div className="flex flex-col items-center gap-3 p-6 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
+      <FaChartLine className="text-green-600 text-3xl" />
+      <span className="text-sm md:text-base font-medium text-gray-800">EQUITY</span>
+    </div>
+    <div className="flex flex-col items-center gap-3 p-6 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
+      <FaPiggyBank className="text-pink-500 text-3xl" />
+      <span className="text-sm md:text-base font-medium text-gray-800">MUTUAL FUNDS</span>
+    </div>
+    <div className="flex flex-col items-center gap-3 p-6 border-r border-gray-300 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
+      <FaShieldAlt className="text-yellow-500 text-3xl" />
+      <span className="text-sm md:text-base font-medium text-gray-800">INSURANCE</span>
+    </div>
+    <div className="flex flex-col items-center gap-3 p-6 hover:scale-105 hover:shadow-md hover:bg-gray-50 cursor-pointer">
+      <FaFileAlt className="text-purple-600 text-3xl" />
+      <span className="text-sm md:text-base font-medium text-gray-800">IPO / CORPORATE BOND</span>
+    </div>
+  </div>
+</div>
+
         </>
       )}
     </>
